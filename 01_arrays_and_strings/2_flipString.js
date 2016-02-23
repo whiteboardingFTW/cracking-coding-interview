@@ -28,3 +28,12 @@ function flip2 (str) {
   resString += last;
   return resString;
 }
+
+// Method #3 (adaptation on Method #1)
+function flip(str){
+  var temp = str.charAt(str.length-1);        // start with last letter
+  for (let i=0; i < str.length -1; i++){
+    temp = str.charAt(i) + temp;              // put char before what is in temp--then save to temp
+  }
+  return temp;
+};
