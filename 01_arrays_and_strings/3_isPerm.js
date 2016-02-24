@@ -3,5 +3,8 @@
 
 // Method #1
 function isPerm(str1, str2) {
-  return str1.split('').sort() == str2.split('').sort();
+  // console.log(str1.split('').sort());
+  // console.log(str2.split('').sort());
+  return str1.split('').sort() === str2.split('').sort();
 };
+console.log(isPerm('racecar', 'acecarr'));

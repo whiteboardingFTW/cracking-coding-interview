@@ -16,24 +16,28 @@ function flip2 (str) {
   var last = str.charAt(str.length - 1);
 
   var resString = (function(str) {
-    var old, new = [];
-    old = str.split('');
-    old.pop();
-    for (var i = 0; i < old.length; i++) {
-      new.push(old[i])
+    var oldStr, newStr = [];
+    oldStr = str.split('');
+    oldStr.pop();
+    for (var i = oldStr.length - 1; i >= 0; i--) {
+      newStr.push(oldStr[i])
     }
-    return new.join('');
-  })();
+    return newStr.join('');
+  })(str);
 
   resString += last;
   return resString;
 }
 
 // Method #3 (adaptation on Method #1)
-function flip(str){
+function flip3(str){
   var temp = str.charAt(str.length-1);        // start with last letter
-  for (let i=0; i < str.length -1; i++){
+  for (var i=0; i < str.length -1; i++){
     temp = str.charAt(i) + temp;              // put char before what is in temp--then save to temp
   }
   return temp;
 };
+
+console.log(flip('woohoo'));
+console.log(flip2('woohoo'));
+console.log(flip3('woohoo'));

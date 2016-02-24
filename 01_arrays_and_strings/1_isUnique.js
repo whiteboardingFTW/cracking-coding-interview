@@ -25,7 +25,7 @@ function isUniqueUsingObjects(str) {
     // another possibility:
     // if(obj.hasOwnProperty(str[i])) return false;
     if(obj[str[i]]) return false;
-    x[str[i]] = "exists";
+    obj[str[i]] = "exists";
   }
   return true;
 }
@@ -40,3 +40,12 @@ function isUniquePrimitive(str) {
   }
   return true;
 }
+
+console.log(isUnique('hello'));
+console.log(isUnique('abcd'));
+console.log(isUnique2('hello'));
+console.log(isUnique2('abcd'));
+console.log(isUniqueUsingObjects('hello'));
+console.log(isUniqueUsingObjects('abcd'));
+console.log(isUniquePrimitive('hello'));
+console.log(isUniquePrimitive('abcd'));

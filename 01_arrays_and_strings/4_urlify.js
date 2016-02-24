@@ -9,9 +9,10 @@
 //
 // EXAMPLE
 // Input: "Mr John Smith
-// Output: "Mr%20Dohn%20Smith"
+// Output: "Mr%20John%20Smith"
 
 // Method #1
 function urlify1(str) {
   return str.replace(/ /g, '%20');
 }
+console.log(urlify1('Mr John Smith'));
