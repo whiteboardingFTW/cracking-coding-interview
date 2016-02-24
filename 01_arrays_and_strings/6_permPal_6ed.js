@@ -94,12 +94,15 @@ function permPal4(string) {
 console.log(permPal('racecar'));
 console.log(permPal('a man aplana canal panama'));
 console.log(permPal('blafdfsfd'));
+
 console.log(permPal2('racecar'));
 console.log(permPal2('a man aplana canal panama'));
 console.log(permPal2('blafdfsfd'));
+
 console.log(permPal3('racecar'));
 console.log(permPal3('a man aplana canal panama'));
 console.log(permPal3('blafdfsfd'));
+
 console.log(permPal4('racecar'));
 console.log(permPal4('a man aplana canal panama'));
 console.log(permPal4('blafdfsfd'));

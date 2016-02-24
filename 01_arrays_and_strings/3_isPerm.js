@@ -3,8 +3,10 @@
 
 // Method #1
 function isPerm(str1, str2) {
-  // console.log(str1.split('').sort());
-  // console.log(str2.split('').sort());
-  return str1.split('').sort() === str2.split('').sort();
+  // Courtesy of Natalie:
+  // join() is necessary because JS does not allow direct comparison of objects and arrays
+  // thus, {} = {} and [] = [] both evaluate to false
+  return str1.split('').sort().join('') === str2.split('').sort().join('');
 };
 console.log(isPerm('racecar', 'acecarr'));
+console.log(isPerm('blabla', 'fdjkfj'));
