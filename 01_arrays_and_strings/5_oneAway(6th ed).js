@@ -58,6 +58,9 @@ console.log('Should be true');
 // differences larger than 1 (like 10). This is needed to prevent a length
 //difference and a character difference from being counted twice.
 
+// Problem Case:
+// chimichuri
+// chimcchurri
 
 
 
