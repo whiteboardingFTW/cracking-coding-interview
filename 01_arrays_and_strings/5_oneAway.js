@@ -11,11 +11,33 @@ function isOneAway (string1, string2) {
     long = string2;
     short = string1;
   }
+
+  //Check for different characters
   for (var i = 0; i < long.length; i++) {
     if(long[i] !== short[i]) count += 1;
   };
   if (count > diff) return false;
   return true;
+
+  //Check for insertion or deletion
+  if(Math.abs(long.length - short.length) === 1){
+    var flag = 0;
+    var v = 0;
+    for ( var i = 0; i < short.length; i++) {
+      if (short[i] !== long[i + v]){
+        //Insertion
+        if (short[i] === long[i + v + 1]){
+          v = 1;
+          flag ++;
+        }
+        //Deletion
+        else {
+          v = -1;
+          flag ++;
+        }
+      }
+    }
+  }
 };
 
 //Test for A-A-Ron
