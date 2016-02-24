@@ -1,4 +1,4 @@
-// Question 1.6 (6th Edition)
+// Question 1.4 (6th Edition)
 
 
 // 1.4 (6th edition) Palindrome Permutation
