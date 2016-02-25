@@ -1,8 +1,8 @@
-// Question 1.4 (6th Edition)
-
-
-// 1.4 (6th edition) Palindrome Permutation
-// Given a string, write a function to check if it is a permutation of a palindomre. A palindrome is a word or phrase that is the same forwards and backwards. A permutation is a rearrangement of letters. The palindrome does not need to be limited to just dictionary words.
+// Question 1.4 (6th edition) Palindrome Permutation
+// Given a string, write a function to check if it is a permutation of a
+// palindomre. A palindrome is a word or phrase that is the same forwards
+// and backwards. A permutation is a rearrangement of letters. The palindrome
+// does not need to be limited to just dictionary words.
 // Example: Tact Coa -> true
 
 'use strict';
