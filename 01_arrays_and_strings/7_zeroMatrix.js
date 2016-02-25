@@ -33,8 +33,8 @@ function zeroMatrix(arr) {
   }
   return arr;
 }
-// console.log(zeroMatrix([[1,1,1,0],[2,2,2,2],[3,3,3,3]]));
-// console.log(zeroMatrix([[1,1,1,0],[2,2,2,2],[3,0,3,3]])); // test with multiple zeros
+console.log(zeroMatrix([[1,1,1,0],[2,2,2,2],[3,3,3,3]]));
+console.log(zeroMatrix([[1,1,1,0],[2,2,2,2],[3,0,3,3]])); // test with multiple zeros
 
 // Method #2
 function zeroMatrix2(arr) {
