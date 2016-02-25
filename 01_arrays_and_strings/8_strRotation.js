@@ -5,6 +5,7 @@
 // if s2 is a rotation of si using only one call to isSubstring
 // (e.g.,"waterbottle"is a rota- tion of"erbottlewat").
 
+// Method #1 (not yet working!!)
 function strRotation(s1, s2) {
   var curr = '';
   var temp = s1 + s1.shift();
@@ -14,6 +15,7 @@ function strRotation(s1, s2) {
   }
 }
 
+// Method #2
 function strRotation2(rotatedString, match) {
   isSubstring(rotatedString + rotatedString, match);
 }
