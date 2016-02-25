@@ -1,12 +1,12 @@
-// Question 1.4 (6th edition) Palindrome Permutation
+// Question 1.4 (6th Edition)
 // Given a string, write a function to check if it is a permutation of a
-// palindomre. A palindrome is a word or phrase that is the same forwards
+// palindrome. A palindrome is a word or phrase that is the same forwards
 // and backwards. A permutation is a rearrangement of letters. The palindrome
 // does not need to be limited to just dictionary words.
 // Example: Tact Coa -> true
 
 'use strict';
-// Natalie
+// // Method #1 - Natalie
 function permPal(str) {
   var counts = {};
   for (let i = 0; i < str.length; i++) {
@@ -28,7 +28,7 @@ function permPal(str) {
   return numOdd < 2;
 }
 
-// Aaron
+// // Method #2 - Aaron
 function permPal2(str) {
   var letters = {};
   for (let i = 0; i < str.length; i++) {
@@ -48,7 +48,7 @@ function permPal2(str) {
   return true;
 }
 
-// Jesse and Sabrina
+// // Method #3 - Jesse and Sabrina
 function permPal3(str) {
   var obj = {};
   var count = 0;
@@ -72,21 +72,21 @@ function permPal3(str) {
   }
 }
 
-// Chris and Maria
+// // Method #4 - Chris and Maria
 function permPal4(string) {
   var count = 0;
   var odd = '';
-  string = string.replace(/ /g,'');
+  string = string.replace(/ /g, '');
 
   for (var i = 0; i < string.length; i++) {
     var regex = new RegExp(string[i], 'ig');
 
-    if((string.match(regex).length) %2 !== 0) {
-      if(odd !== string[i]){
+    if ((string.match(regex).length) % 2 !== 0) {
+      if (odd !== string[i]) {
         odd = string[i];
         count++;
       }
-      if(count > 1) return false;
+      if (count > 1) return false;
     }
   }
   return true;

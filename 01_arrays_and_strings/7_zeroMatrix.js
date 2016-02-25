@@ -10,25 +10,25 @@ function zeroMatrix(arr) {
   console.log(arr);
   // replaces the given row and column of the array with zeros
   function zero(arr, row, col) {
-    for(let i = 0; i < arr[row].length; i++) {
+    for (let i = 0; i < arr[row].length; i++) {
       arr[row][i] = 0;
     }
-    for(let j = 0; j < arr.length; j++) {
+    for (let j = 0; j < arr.length; j++) {
       arr[j][col] = 0;
     }
   }
 
   var axises = [];  // stores coordinates(i.e. row and col) where zero occurs
-  for(let row = 0; row < arr.length; row++) {
-    for(let col = 0; col < arr[row].length; col++) {
-      if(arr[row][col] === 0) {
+  for (let row = 0; row < arr.length; row++) {
+    for (let col = 0; col < arr[row].length; col++) {
+      if (arr[row][col] === 0) {
         axises.push([row, col]);
       }
     }
   }
 
   // for each coordinate, call zero, which will replace the row and col with zeros
-  for(let v = 0; v < axises.length; v++) {
+  for (let v = 0; v < axises.length; v++) {
     zero(arr, axises[v][0], axises[v][1]);
   }
   return arr;
@@ -42,8 +42,8 @@ function zeroMatrix2(arr) {
   var clearCol = [];
 
 // saves where the 0's are located
-  for(let r = 0; r < arr.length; r++) {
-    for(let c = 0; c < arr[r].length; c++) {
+  for (let r = 0; r < arr.length; r++) {
+    for (let c = 0; c < arr[r].length; c++) {
       if (arr[r][c] === 0) {
         clearRow.push(r);
         clearCol.push(c);
@@ -58,10 +58,10 @@ function zeroMatrix2(arr) {
     return arr.indexOf(el) === i;
   });
 // clears the rows and columns
-  for(let i = 0; i < arr.length; i++) {
-    for(let j = 0; j < arr[i].length; j++) {
-      if(clearRow.indexOf(i) !== -1) arr[i][j] = 0;
-      if(clearCol.indexOf(j) !== -1) arr[i][j] = 0;
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < arr[i].length; j++) {
+      if (clearRow.indexOf(i) !== -1) arr[i][j] = 0;
+      if (clearCol.indexOf(j) !== -1) arr[i][j] = 0;
     }
   }
   return arr;
