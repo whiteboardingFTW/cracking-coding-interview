@@ -1,4 +1,4 @@
-// 1.5 (6th edition) One Away
+// Question 1.5 (6th Edition)
 // There are three types of edits can be performed on strings: insert a character, remove a character, or replace a character. Given two strings, write a function to check if they are one edit (or zero edits) away.
 // Examples:
 //   pale, ple   -> true
@@ -6,10 +6,8 @@
 //   pale, bale  -> true
 //   pale, bake  -> false
 
-
-
-// Josh
-function isOneAway (string1, string2) {
+// // Method #1 - Josh
+function isOneAway(string1, string2) {
 
   var count = 0;
   var long, short;
@@ -23,56 +21,49 @@ function isOneAway (string1, string2) {
     short = string1;
   }
 
-  //Check for different characters
+  // Check for different characters
   for (var i = 0; i < long.length; i++) {
-    if(long[i] !== short[i]) count += 1;
-  };
+    if (long[i] !== short[i]) count += 1;
+  }
   if (count > diff) return false;
   return true;
 
-  //Check for insertion or deletion
-  if(Math.abs(long.length - short.length) === 1){
+  // Check for insertion or deletion
+  if (Math.abs(long.length - short.length) === 1) {
     var flag = 0;
     var v = 0;
-    for ( var i = 0; i < short.length; i++) {
-      if (short[i] !== long[i + v]){
-        //Insertion
-        if (short[i] === long[i + v + 1]){
+    for (var i = 0; i < short.length; i++) {
+      if (short[i] !== long[i + v]) {
+        // Insertion
+        if (short[i] === long[i + v + 1]) {
           v = 1;
-          flag ++;
-        }
-        //Deletion
-        else {
+          flag++;
+        } else { // Deletion
           v = -1;
-          flag ++;
+          flag++;
         }
       }
     }
   }
-};
+}
 
-//Test for A-A-Ron
-console.log(isOneAway('regex' , 'regexepleslkjfasldkjfasdfsd'));
+// Test for A-A-Ron
+console.log(isOneAway('regex', 'regexepleslkjfasldkjfasdfsd'));
 console.log('Should be false');
-console.log(isOneAway('bear' , 'b'));
+console.log(isOneAway('bear', 'b'));
 console.log('Should be false');
 
-//Test for De-Nice
-console.log( isOneAway('bear' , 'pear') );
+// Test for De-Nice
+console.log(isOneAway('bear', 'pear'));
 console.log('Should be true');
-console.log(isOneAway('bear' , 'bea'));
+console.log(isOneAway('bear', 'bea'));
 console.log('Should be true');
 
-
-
-//NOTE: Longest string is being calculated in case the questions asks us to calculate
+// NOTE: Longest string is being calculated in case the questions asks us to calculate
 // differences larger than 1 (like 10). This is needed to prevent a length
-//difference and a character difference from being counted twice.
+// difference and a character difference from being counted twice.
 
-
-
-
-// Natalie, drunk Tyler, and practically everyone in the room
+// // Method #2 - Natalie, drunk Tyler, and practically everyone in the room
 function oneAway(str1, str2) {
   if (str1 === str2) return true;
 
@@ -110,12 +101,3 @@ console.log(oneAway('chimcchurri', 'chimichuri')); // false
 console.log(oneAway('hannah', 'hanah')); // true
 console.log(oneAway('aaron', 'aaaron')); // true
 console.log(oneAway('chimcchhim', 'chimccjhim')); // true
-
-
-
-
-
-
-
-
-//Altered to calculate all changes past 1
