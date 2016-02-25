@@ -8,7 +8,7 @@ in the 6th edition, but not in the 5th edition are appended
 ### Chapter 1: Arrays and Strings
 
 | Number |   Name      | 5th Ed | 6th Ed | Solutions |
-|-------:|------------:|-------:|-------:|----------:|
+|:------:|:-----------:|:------:|:------:|:---------:|
 |    1   | isUnique    |   1.1  |   1.1  |     4     |
 |    2   | flipString  |   1.2  |   1.2  |     3     |
 |    3   | isPerm      |   1.3  |   1.3  |     1     |
