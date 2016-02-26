@@ -21,3 +21,9 @@ in the 6th edition, but not in the 5th edition are appended.
 |   10   | strRotation |   1.8  |   1.9  |     2     |
 
 ### Chapter 2: Linked Lists
+
+| Number |         Name        | 5th Ed | 6th Ed | Solutions |
+|:------:|:-------------------:|:------:|:------:|:---------:|
+|    1   | removeDuplicates    |   2.1  |   2.1  |     2     |
+|    2   | kLastElement        |   2.2  |   2.2  |     1     |
+|    3   | deleteMiddleNode    |   2.3  |   2.3  |     1     |
