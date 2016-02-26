@@ -1,9 +1,11 @@
-// Question 2.3
+// Question 2.3 (5th Edition)
+// Question 2.3 (6th Edition)
 // Implement an algorithm to delete a node in the middle of a singly linked list, given only access to that node.
 // Example:
 //   Input: the node c from the linked list a -> b -> c -> d -> e
 //   Result: nothing is returned, but the new linked list looks like a -> b -> d -> e
 
+// Method #1
 function deleteMiddleNode(pointer) {
   var current = pointer;
   while (current.next) {
@@ -29,3 +31,9 @@ m3.next = m4;
 console.log(m1); // 1 -> 2 -> 3 -> 4
 deleteMiddleNode(m2);
 console.log(m1); // 1 -> 3 -> 4
+
+// Method #2
+function deleteMiddleNode2(pointer) {
+  pointer.value = pointer.next.value;
+  pointer.next = pointer.next.next;
+}

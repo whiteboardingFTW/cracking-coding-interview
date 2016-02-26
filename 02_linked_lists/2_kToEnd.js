@@ -1,9 +1,10 @@
-// Question 2.2
+// Question 2.2 (5th Edition)
+// Question 2.2 (6th Edition)
 // Implement an algorithm to find the kth to last element of a singly linked list.
 
 // Clarification: return the pointer to the (kth to last) element - so if k = 2, it should return a pointer to the 2nd to last element, i.e. a head that points to the linked list with only the last 2 elements
 
-// Sabrina
+// Method #1
 function kToEnd(head, k) {
   var curr = head;
   var length = 1;

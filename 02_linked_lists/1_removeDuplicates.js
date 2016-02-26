@@ -1,9 +1,10 @@
-// Question 2.1
+// Question 2.1 (5th Edition)
+// Question 2.1 (6th Edition)
 // Write code to remove duplicates from an unsorted linked list.
 // FOLLOW UP
 // How would you solve this problem if a temporary buffer is not allowed?
 
-// Method #1 (Aaron, Maria, Chris)
+// Method #1 - (Aaron, Maria, Chris)
 function removeDuplicates(head) {
   var current = head;
   var seen = [];
@@ -59,7 +60,7 @@ while(current) {
 }
 
 // ===============================================================
-// Method #2 (Natalie)
+// Method #2 - (Natalie)
 function removeDuplicates2(head) {
   var seen = [head.value];
   var current = head;
