@@ -68,7 +68,7 @@ function partition(head, p) {
   var small = [];
   var big = [];
   while (curr) {
-    if (curr.value < p) {
+    if (curr.value <= p) {
       small.push(curr.value);
       curr = curr.next;
     } else {
@@ -92,16 +92,10 @@ function partition(head, p) {
 }
 
 var m1 = { value: '6', next: null };
-var m2 = { value: '5', next: null };
-var m3 = { value: '3', next: null };
-var m4 = { value: '4', next: null };
-var m5 = { value: '5', next: null };
-var m6 = { value: '6', next: null };
+var m2 = { value: '3', next: null };
+var m3 = { value: '4', next: null };
 
 m1.next = m2;
 m2.next = m3;
-m3.next = m4;
-m4.next = m5;
-m5.next = m6;
 
 console.log(partition(m1, 4));
