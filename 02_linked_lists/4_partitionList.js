@@ -62,6 +62,7 @@ while(current) {
 // DESIRED: -> 4 -> 3 -> 6 -> 7
 // ACTUAL:   -> 4 -> 3 -> 7 -> 6
 
+// =====================================================
 // Method #2
 function partitionList2(head, p) {
   var curr = head;

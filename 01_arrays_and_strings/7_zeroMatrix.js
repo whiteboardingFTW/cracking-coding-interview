@@ -3,9 +3,9 @@
 // Write an algorithm such that if an element in an MxN matrix is 0, its
 // entire row and column are set to 0.
 
+// =====================================================
 // Method #1
 'use strict';
-
 function zeroMatrix(arr) {
   console.log(arr);
   // replaces the given row and column of the array with zeros
@@ -36,6 +36,7 @@ function zeroMatrix(arr) {
 console.log(zeroMatrix([[1,1,1,0],[2,2,2,2],[3,3,3,3]]));
 console.log(zeroMatrix([[1,1,1,0],[2,2,2,2],[3,0,3,3]])); // test with multiple zeros
 
+// =====================================================
 // Method #2
 function zeroMatrix2(arr) {
   var clearRow = [];

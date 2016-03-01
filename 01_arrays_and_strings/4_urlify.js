@@ -5,15 +5,16 @@
 // to hold the additional characters, and that you are given the "true"
 // length of the string.
 
+// =====================================================
 // Method #1
 function urlify(str) {
   return str.replace(/ /g, '%20');
 }
+console.log(urlify('Mr John Smith'));
 
+// =====================================================
 // Method #2
 function urlify2(str) {
   return str.split(' ').join('%20');
 }
-
-console.log(urlify('Mr John Smith'));
 console.log(urlify2('Mr John Smith'));

@@ -4,8 +4,10 @@
 // image is 4 bytes, write a method to rotate the image by 90 degrees. Can
 // you do this in place?
 
-'use strict';
+
+// =====================================================
 // Method #1
+'use strict';
 function rotateMatrix(arr) {
   console.log(arr);
   var newMatrix = [];
@@ -23,6 +25,7 @@ function rotateMatrix(arr) {
 }
 console.log(rotateMatrix([[1,2,3,4],[5,6,7,8],[9,10,11,12],[13,14,15,16]]));
 
+// =====================================================
 // Method #2 (Book Solution)
 function rotate(arr) {
   console.log(arr);
@@ -41,5 +44,4 @@ function rotate(arr) {
   }
   return arr;
 }
-
 console.log(rotate([[1,1,1,1,1],[2,2,2,2,2],[3,3,3,3,3],[4,4,4,4,4],[5,5,5,5,5]]));

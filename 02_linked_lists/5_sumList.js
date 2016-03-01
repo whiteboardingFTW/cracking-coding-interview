@@ -61,7 +61,8 @@ function sumList(head1, head2) {
   return finishedHead;
 }
 
-printLinkedList(sumList(m,n));
+printLinkedList(sumList(m,n));  // 1 -> 4 -> 6 -> 2
+
 
 // =====================================================
 // Method #2 (Aaron)
@@ -97,8 +98,7 @@ function sumList2(n1, n2) {
   return retList;
 }
 
-printLinkedList(sumList2(m,n));
-
+printLinkedList(sumList2(m,n)); // 1 -> 4 -> 6 -> 2
 
 
 // =====================================================
@@ -142,36 +142,18 @@ function sumList3(head1, head2) {
 
   }
   return head;
-};
+}
 
 
-var head1 = {
-  val: 7,
-  next: {
-    val: 1,
-    next: {
-      val: 6,
-      next: null
-    }
-  }
-};
+var head1 = { val: 7, next: { val: 1, next: { val: 6, next: null } } };
+var head2 = { val: 5, next: { val: 9, next: { val: 4, next: { val: 5, next: null } } } };
 
-var head2 = {
-  val: 5,
-  next: {
-    val: 9,
-    next: {
-      val: 4,
-      next: {
-        val: 5,
-        next: null
-      }
-    }
-  }
-};
-
-var res = sumList2(head1, head2);
+var res = sumList3(head1, head2);
 while(res) {
   console.log(res.val);
   res = res.next;
-};
+}
+// 617 + 5495 = 6112
+// 7 -> 1 -> 6
+// 5 -> 9 -> 4 -> 5
+// 2 -> 1 -> 1 -> 6

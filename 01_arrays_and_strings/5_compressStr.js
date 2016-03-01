@@ -7,6 +7,7 @@
 // would not become smaller than the original string,
 // your method should return the original string.
 
+// =====================================================
 // Method #1
 function compressStr(str) {
   var res = '';
@@ -23,7 +24,9 @@ function compressStr(str) {
   if (res.length > str.length) return str;
   else return res;
 }
+console.log(compressStr('aabcccccaaa'));
 
+// =====================================================
 // Method #2
 function compressStr2(str) {
   var count = 1;
@@ -45,6 +48,4 @@ function compressStr2(str) {
     return result;
   }
 }
-
-console.log(compressStr('aabcccccaaa'));
 console.log(compressStr2('aabcccccaaa'));

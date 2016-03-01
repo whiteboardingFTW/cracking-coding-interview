@@ -4,6 +4,7 @@
 // FOLLOW UP
 // How would you solve this problem if a temporary buffer is not allowed?
 
+// =====================================================
 // Method #1 - (Aaron, Maria, Chris)
 function removeDuplicates(head) {
   var current = head;

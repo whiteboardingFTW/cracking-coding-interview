@@ -6,7 +6,8 @@
 //   pale, bale  -> true
 //   pale, bake  -> false
 
-// // Method #1 - Josh
+// =====================================================
+// Method #1 - Josh
 function isOneAway(string1, string2) {
 
   var count = 0;
@@ -63,7 +64,8 @@ console.log('Should be true');
 // differences larger than 1 (like 10). This is needed to prevent a length
 // difference and a character difference from being counted twice.
 
-// // Method #2 - Natalie, drunk Tyler, and practically everyone in the room
+// =====================================================
+// Method #2 - Natalie, drunk Tyler, and practically everyone in the room
 function oneAway(str1, str2) {
   if (str1 === str2) return true;
 

@@ -1,6 +1,8 @@
 // Question 1.2 (5th Edition)
-// Implement a function void reverse(char*str) in C or C++ which reverses a null-terminated string.
+// Implement a function void reverse(char*str) in C or C++ which reverses a
+// null-terminated string.
 
+// =====================================================
 // Method #1
 function flip(str) {
   var last = str.charAt(str.length - 1);
@@ -10,7 +12,9 @@ function flip(str) {
   // substr(0, 5) starts at index 0, forms string of 5 characters
   // substring(0, 5) starts at index 0, ends at index 5
 }
+console.log(flip('woohoo'));
 
+// =====================================================
 // Method #2
 function flip2(str) {
   var last = str.charAt(str.length - 1);
@@ -28,7 +32,9 @@ function flip2(str) {
   resString += last;
   return resString;
 }
+console.log(flip2('woohoo'));
 
+// =====================================================
 // Method #3 (adaptation on Method #1)
 function flip3(str) {
   var temp = str.charAt(str.length - 1);        // start with last letter
@@ -37,7 +43,4 @@ function flip3(str) {
   }
   return temp;
 }
-
-console.log(flip('woohoo'));
-console.log(flip2('woohoo'));
 console.log(flip3('woohoo'));

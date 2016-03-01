@@ -3,6 +3,7 @@
 // Implement an algorithm to determine if a string has all unique characters.
 // What if you cannot use additional data structures?
 
+// =====================================================
 // Method #1
 function isUnique(str) {
   for (var i = 0; i < str.length; i++) {
@@ -10,7 +11,10 @@ function isUnique(str) {
   }
   return true;
 }
+console.log(isUnique('hello'));
+console.log(isUnique('abcd'));
 
+// =====================================================
 // Method #2
 function isUnique2(str) {
   for (var i = 0; i < str.length; i++) {
@@ -18,8 +22,11 @@ function isUnique2(str) {
   }
   return true;
 }
+console.log(isUnique2('hello'));
+console.log(isUnique2('abcd'));
 
-// // Method #3 - Using objects
+// =====================================================
+// Method #3 - Using objects
 function isUniqueUsingObjects(str) {
   var obj = {};
   for (var i = 0; i < str.length; i++) {
@@ -30,8 +37,11 @@ function isUniqueUsingObjects(str) {
   }
   return true;
 }
+console.log(isUniqueUsingObjects('hello'));
+console.log(isUniqueUsingObjects('abcd'));
 
-// // Method #4 - Without using additional data structures
+// =====================================================
+// Method #4 - Without using additional data structures
 function isUniquePrimitive(str) {
   var strLength = str.length;
   for (var i = 0; i < strLength - 1; i++) {
@@ -41,12 +51,20 @@ function isUniquePrimitive(str) {
   }
   return true;
 }
-
-console.log(isUnique('hello'));
-console.log(isUnique('abcd'));
-console.log(isUnique2('hello'));
-console.log(isUnique2('abcd'));
-console.log(isUniqueUsingObjects('hello'));
-console.log(isUniqueUsingObjects('abcd'));
 console.log(isUniquePrimitive('hello'));
 console.log(isUniquePrimitive('abcd'));
+
+// =====================================================
+// Method #5 - from github.com/careercup/CtCI-6th-Edition-JavaScript
+function isUnique3(str) {
+  var char_set = Array.apply(null, Array(256)).map(Boolean.prototype.valueOf, false);
+  for (var i = 0; i < str.length; i++) {
+    if (char_set[str[i].charCodeAt(0)]) {
+      return false;
+    }
+    char_set[str[i].charCodeAt(0)] = true;
+  }
+  return true;
+}
+console.log(isUnique3('hello'));
+console.log(isUnique3('abcd'));

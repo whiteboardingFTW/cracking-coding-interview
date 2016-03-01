@@ -4,6 +4,7 @@
 
 // Clarification: return the pointer to the (kth to last) element - so if k = 2, it should return a pointer to the 2nd to last element, i.e. a head that points to the linked list with only the last 2 elements
 
+// =====================================================
 // Method #1
 function kToEnd(head, k) {
   var curr = head;

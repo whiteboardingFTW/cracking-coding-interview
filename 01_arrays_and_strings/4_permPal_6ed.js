@@ -5,8 +5,9 @@
 // does not need to be limited to just dictionary words.
 // Example: Tact Coa -> true
 
-'use strict';
+// =====================================================
 // // Method #1 - Natalie
+'use strict';
 function permPal(str) {
   var counts = {};
   for (let i = 0; i < str.length; i++) {
@@ -27,8 +28,12 @@ function permPal(str) {
 
   return numOdd < 2;
 }
+console.log(permPal('racecar'));
+console.log(permPal('a man aplana canal panama'));
+console.log(permPal('blafdfsfd'));
 
-// // Method #2 - Aaron
+// =====================================================
+// Method #2 - Aaron
 function permPal2(str) {
   var letters = {};
   for (let i = 0; i < str.length; i++) {
@@ -47,8 +52,12 @@ function permPal2(str) {
   }
   return true;
 }
+console.log(permPal2('racecar'));
+console.log(permPal2('a man aplana canal panama'));
+console.log(permPal2('blafdfsfd'));
 
-// // Method #3 - Jesse and Sabrina
+// =====================================================
+// Method #3 - Jesse and Sabrina
 function permPal3(str) {
   var obj = {};
   var count = 0;
@@ -71,8 +80,12 @@ function permPal3(str) {
     return false;
   }
 }
+console.log(permPal3('racecar'));
+console.log(permPal3('a man aplana canal panama'));
+console.log(permPal3('blafdfsfd'));
 
-// // Method #4 - Chris and Maria
+// =====================================================
+// Method #4 - Chris and Maria
 function permPal4(string) {
   var count = 0;
   var odd = '';
@@ -91,18 +104,6 @@ function permPal4(string) {
   }
   return true;
 }
-console.log(permPal('racecar'));
-console.log(permPal('a man aplana canal panama'));
-console.log(permPal('blafdfsfd'));
-
-console.log(permPal2('racecar'));
-console.log(permPal2('a man aplana canal panama'));
-console.log(permPal2('blafdfsfd'));
-
-console.log(permPal3('racecar'));
-console.log(permPal3('a man aplana canal panama'));
-console.log(permPal3('blafdfsfd'));
-
 console.log(permPal4('racecar'));
 console.log(permPal4('a man aplana canal panama'));
 console.log(permPal4('blafdfsfd'));

@@ -5,6 +5,7 @@
 //   Input: the node c from the linked list a -> b -> c -> d -> e
 //   Result: nothing is returned, but the new linked list looks like a -> b -> d -> e
 
+// =====================================================
 // Method #1
 function deleteMiddleNode(pointer) {
   var current = pointer;
@@ -32,6 +33,7 @@ console.log(m1); // 1 -> 2 -> 3 -> 4
 deleteMiddleNode(m2);
 console.log(m1); // 1 -> 3 -> 4
 
+// =====================================================
 // Method #2
 function deleteMiddleNode2(pointer) {
   pointer.value = pointer.next.value;
