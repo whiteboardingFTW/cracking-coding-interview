@@ -98,3 +98,80 @@ function sumList2(n1, n2) {
 }
 
 printLinkedList(sumList2(m,n));
+
+
+
+// =====================================================
+// Method #3 (Chris)
+function sumList3(head1, head2) {
+  var curr1 = head1;
+  var curr2 = head2;
+  var twoDigits = false;
+  var sum = 0;
+  var head = null;
+
+  while(curr1 || curr2 || twoDigits) {
+    sum = 0;
+    if(twoDigits) {
+      sum = 1;
+      twoDigits = false;
+    }
+    if(curr1 && curr2) sum += curr1.val + curr2.val;
+    if(curr1 && !curr2) sum += curr1.val;
+    if(!curr1 && curr2) sum += curr2.val;
+
+    if(sum > 9) {
+      sum -= 10;
+      twoDigits = true;
+    }
+    if(head) {
+      curr.next = {
+        val: sum,
+      }
+      if(curr1 || curr2) curr = curr.next;
+    }
+    else {
+      head = {
+        val: sum,
+        next: null
+      }
+      curr = head;
+    }
+    if(curr1) curr1 = curr1.next;
+    if(curr2) curr2 = curr2.next;
+
+  }
+  return head;
+};
+
+
+var head1 = {
+  val: 7,
+  next: {
+    val: 1,
+    next: {
+      val: 6,
+      next: null
+    }
+  }
+};
+
+var head2 = {
+  val: 5,
+  next: {
+    val: 9,
+    next: {
+      val: 4,
+      next: {
+        val: 5,
+        next: null
+      }
+    }
+  }
+};
+
+var res = sumList2(head1, head2);
+while(res) {
+  console.log(res.val);
+  res = res.next;
+};
