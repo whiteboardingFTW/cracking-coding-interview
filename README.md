@@ -27,4 +27,11 @@ in the 6th edition, but not in the 5th edition are appended.
 |    1   | removeDuplicates    |   2.1  |   2.1  |     2     |
 |    2   | kToEnd              |   2.2  |   2.2  |     1     |
 |    3   | deleteMiddleNode    |   2.3  |   2.3  |     2     |
-|    4   | partitionList       |   2.4  |   2.4  |     0.5   |
+|    4   | partitionList       |   N/A  |   2.4  |     0.5   |
+|    5   | partitionList       |   2.4  |   2.5  |     2     |
+
+### Miscellaneous
+
+|         Name        | Source | Solutions |
+| ------------------- | :----: | :-------: |
+| Tyler's tree print  | Tyler  |     1     |
