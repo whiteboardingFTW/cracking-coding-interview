@@ -18,7 +18,6 @@ function printLinkedList(head) {
   console.log(temp);
 }
 
-
 // =======================================================
 // Method #1 (Sam)
 function isPalindrome(head) {
@@ -47,7 +46,7 @@ printLinkedList(p);
 console.log(isPalindrome(p));
 
 
-// ========================
+// =======================================================
 // Method #2 (Sabrina)
 function isPalindrome2(head) {
   var curr = head;
@@ -67,3 +66,81 @@ printLinkedList(n);
 console.log(isPalindrome2(n));
 printLinkedList(p);
 console.log(isPalindrome2(p));
+
+
+// =======================================================
+// Method #3 (assume singly linked list)
+// Jim, Sam, Chris...but mostly Jim
+'use strict';
+function isPalindrome3(head) {
+  var arr = [];
+  var arr2 = [];
+
+  while(head) {
+    arr.push(head.val);
+    arr2.unshift(head.val);
+    head = head.next;
+  }
+  for(let i = 0; i < arr.length; i++) {
+    if(arr[i] !== arr2[i]) return false;
+  }
+  return true;
+}
+
+var head = {
+  val: 'a',
+  next: {
+    val: 'b',
+    next: {
+      val: 'b',
+      next: null
+    }
+  }
+}
+
+console.log(isPalindrome(head));
+
+// =======================================================
+// Method #4 (assume doubly linked list and assume no tail)
+// Aaron
+function isPalindrome4(head) {
+  if(!head) return false; // empty linked list
+  var front = head;
+  var back = head.next;
+  if(!back) return true;  // single letter is a palindrome
+
+  while(back.next) {
+    back = back.next;
+  } // now I have a pointed to the end of the list
+
+  // walk front and back pointers towards center of the list
+  while(front !== back && front.prev !== back) {
+    if(front.val !== back.val) return false;
+    front = front.next;
+    back = back.prev;
+  }
+  return true;
+}
+
+var firstNode = {
+  prev: null,
+  val: 'a',
+  next: null
+}
+var secondNode = {
+  prev: null,
+  val: 'b',
+  next: null
+}
+var thirdNode = {
+  prev: null,
+  val: 'a',
+  next: null
+}
+
+firstNode.next = secondNode;
+secondNode.next = thirdNode;
+secondNode.prev = firstNode;
+thirdNode.prev = secondNode;
+
+console.log(isPalindrome2(firstNode));
