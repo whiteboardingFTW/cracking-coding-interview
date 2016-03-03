@@ -31,7 +31,7 @@ in the 6th edition, but not in the 5th edition are appended.
 |    5   | sumList             |   2.5  |   2.5  |     3     |
 |    6   | loopDetection       |   2.6  |   2.8  |     1     |
 |    7   | isPalindrome        |   2.7  |   2.6  |     4     |
-|    7   | intersection        |   N/A  |   2.7  |     1     |
+|    7   | intersection        |   N/A  |   2.7  |     2     |
 
 
 
