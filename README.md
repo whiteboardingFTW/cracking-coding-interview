@@ -25,11 +25,11 @@ in the 6th edition, but not in the 5th edition are appended.
 | Number |         Name        | 5th Ed | 6th Ed | Solutions |
 |:------:|:-------------------:|:------:|:------:|:---------:|
 |    1   | removeDuplicates    |   2.1  |   2.1  |     2     |
-|    2   | kToEnd              |   2.2  |   2.2  |     1     |
+|    2   | kToEnd              |   2.2  |   2.2  |     2     |
 |    3   | deleteMiddleNode    |   2.3  |   2.3  |     2     |
 |    4   | partitionList       |   2.4  |   2.4  |     1.5   |
 |    5   | sumList             |   2.5  |   2.5  |     3     |
-|    6   | loopDetection       |   2.6  |   2.8  |     1     |
+|    6   | loopDetection       |   2.6  |   2.8  |     2     |
 |    7   | isPalindrome        |   2.7  |   2.6  |     4     |
 |    7   | intersection        |   N/A  |   2.7  |     2     |
 

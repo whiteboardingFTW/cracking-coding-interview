@@ -30,3 +30,25 @@ function circular(head) {
 }
 
 console.log(circular(n));
+
+// ===========================================================
+// Method #2
+function circular2(head) {
+  var slow = head;
+  var fast = head;
+
+  while (fast !== null && fast.next !== null) {
+    slow = slow.next;
+    fast = fast.next.next;
+    if (slow == fast) break;
+  }
+  slow = head;
+  while (slow !== fast) {
+    slow = slow.next;
+    fast = fast.next;
+  }
+
+  return fast;
+}
+
+console.log(circular2(n));
