@@ -37,7 +37,7 @@ in the 6th edition, but not in the 5th edition are appended.
 
 | Number |         Name        | 5th Ed | 6th Ed | Solutions |
 |:------:|:-------------------:|:------:|:------:|:---------:|
-|    1   | threeInOne          |   3.1  |   3.1  |     1     |
+|    1   | threeInOne          |   3.1  |   3.1  |     2     |
 |    2   | stackMin            |   3.2  |   3.2  |     1     |
 
 
