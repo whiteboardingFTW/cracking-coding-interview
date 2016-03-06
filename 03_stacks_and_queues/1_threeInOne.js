@@ -41,6 +41,8 @@ test.push('b1', 1);
 test.push('b2', 1);
 test.push('c', 2);
 
+debugger;
+
 // Method #2
 var ThreeInOne2 = function() {
   var stack1 = [];
