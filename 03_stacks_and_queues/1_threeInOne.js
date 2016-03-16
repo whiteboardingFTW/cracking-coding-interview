@@ -43,7 +43,7 @@ test.push('c', 2);
 
 debugger;
 
-// Method #2
+// Method #2 - Does not satisfy question requirements?
 var ThreeInOne2 = function() {
   var stack1 = [];
   var stack2 = [];
