@@ -1,6 +1,8 @@
-// Question 3.1
+// Question 3.1 (5th Edition)
+// Question 3.1 (6th Edition)
 // Describe how you could use a single array to implement three stacks.
 
+// =======================================================
 // Method #1 (Natalie)
 var ThreeInOne = function() {
   var stack = [null];
@@ -43,6 +45,7 @@ test.push('c', 2);
 
 debugger;
 
+// =======================================================
 // Method #2 - Does not satisfy question requirements?
 var ThreeInOne2 = function() {
   var stack1 = [];

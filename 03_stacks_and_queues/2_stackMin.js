@@ -1,6 +1,8 @@
-// Question 3.2
+// Question 3.2 (5th Edition)
+// Question 3.2 (6th Edition)
 // How would you design a stack which, in addition to push and pop, also has a function min which returns the minimum element? Push, pop and min should all operatein O(1) time.
 
+// =======================================================
 // Method #1 (Sabrina)
 var StackMin = function() {
   var stack = [];

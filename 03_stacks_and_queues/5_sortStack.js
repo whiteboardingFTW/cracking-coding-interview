@@ -1,10 +1,14 @@
-// Question 3.5 (Sort Stack)
+// Question 3.6 (5th Edition)*
+// Question 3.5 (6th Edition)
 // Write a program to sort a stack such that the smallest items are on the top.
 // You can use an additional temporary stack, but you may not copy the elements
 // into any other data structure (such as an array). The stack supports the
 // following operations: push, pop, peek, and isEmpty.
 
-// Assume this stack implementation
+// * 5th Edition asks to sort so that largest items are on top.
+
+// =======================================================
+// Method #1 (Chris)
 function Stack () {
   this.stack = [];
 
@@ -19,7 +23,6 @@ function Stack () {
   }
 }
 
-// Method #1 (Chris)
 function sortStack (inputStack) {
   var y = inputStack;
   var x = new Stack();
