@@ -1,4 +1,5 @@
-// Question 3.3 (Stack of Plates)
+// Question 3.3 (5th Edition)
+// Question 3.3 (6th Edition)
 // Imagine a (literal) stack of plates.  If the stack gets too high, it might
 // topple.  Therefore, in real life, we would likely start a new stack when the
 // previous stack exceeds some threshold. Implement a data structure that mimics
@@ -11,6 +12,7 @@
 // Implement a function popAt (x) which performs a pop operation on a specific
 // sub-stack.
 
+// =======================================================
 // Method #1 (Chris)
 var SetOfStacks = function(cap) {
   this.set = [[]];

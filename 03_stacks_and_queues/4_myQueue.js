@@ -1,5 +1,5 @@
-// Question 1.4 (Queue via Stacks)
-// Implement a queue using two stacks.
+// Question 3.4 (6th Edition)
+// Implement a MyQueue class which implements a queue using two stacks.
 
 // Assume this stack implementation
 function Stack () {
@@ -8,6 +8,7 @@ function Stack () {
   Stack.prototype.pop = this.array.pop.bind(this.array);
 }
 
+// =======================================================
 // Method #1 (Chris)
 function MyQueue () {
   this.queue = new Stack();

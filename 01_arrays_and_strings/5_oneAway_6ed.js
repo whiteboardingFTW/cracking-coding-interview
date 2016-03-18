@@ -1,5 +1,7 @@
 // Question 1.5 (6th Edition)
-// There are three types of edits can be performed on strings: insert a character, remove a character, or replace a character. Given two strings, write a function to check if they are one edit (or zero edits) away.
+// There are three types of edits can be performed on strings: insert a
+// character, remove a character, or replace a character. Given two strings,
+// write a function to check if they are one edit (or zero edits) away.
 // Examples:
 //   pale, ple   -> true
 //   pales, pale -> true

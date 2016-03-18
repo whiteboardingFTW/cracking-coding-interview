@@ -1,8 +1,10 @@
 // Question 2.6 (5th Edition)
 // Question 2.8 (6th Edition)
-// Given a circular linked list, implement an algorithm which returns the node at the beginning of the loop.
+// Given a circular linked list, implement an algorithm which returns the node
+// at the beginning of the loop.
 // Definition:
-//   Circular linked list: A (corrupt) linked list in which a node's next pointer points to an earlier node, so as to make a loop in the linked list.
+//   Circular linked list: A (corrupt) linked list in which a node's next
+// pointer points to an earlier node, so as to make a loop in the linked list.
 // Example:
 //   Input:  A -> B -> C -> D -> E -> C (the same C as earlier)
 //   Output: C
