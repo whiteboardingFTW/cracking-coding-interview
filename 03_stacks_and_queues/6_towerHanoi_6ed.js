@@ -62,3 +62,37 @@ function hanoi(index, targetStack, subStack, idleStack) {
 console.log('before:', stackA.stack, stackB.stack, stackC.stack);
 hanoi(stackA.length(), stackC, stackB, stackA);
 console.log('after:', stackA.stack, stackB.stack, stackC.stack);
+
+
+// Method #2
+var a = [5, 4, 3, 2, 1];
+var b = [];
+var c = [];
+
+function move(n, startTower, endTower){
+  var mover = startTower.pop();
+  console.log('moving piece: ' + mover);
+  endTower.push(mover);
+}
+
+function hanoi(n, startTower, endTower) {
+  var midTower;
+  if (startTower === a && endTower === b || startTower === b && endTower === a) {
+    midTower = c;
+  } else if (startTower === b && endTower === c || startTower === c && endTower === b) {
+    midTower = a;
+  } else if (startTower === a && endTower === c || startTower === c && endTower === a) {
+    midTower = b;
+  }
+
+  if (n === 1) {
+    move(1, startTower, endTower);
+    return;
+  }
+
+  hanoi(n-1, startTower, midTower);
+  move(n, startTower, endTower);
+  hanoi(n-1, midTower, endTower);
+}
+
+hanoi(5, a, c);
