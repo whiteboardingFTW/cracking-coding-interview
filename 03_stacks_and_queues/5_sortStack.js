@@ -8,8 +8,9 @@
 // * 5th Edition asks to sort so that largest items are on top.
 
 // =======================================================
-// Method #1 (Chris)
+// Method #1 (Chris, Maria)
 function Stack () {
+
   this.stack = [];
 
   Stack.prototype.push = function(ele) {
@@ -21,41 +22,89 @@ function Stack () {
   Stack.prototype.peek = function () {
     return this.stack[this.stack.length - 1];
   }
+
 }
 
-function sortStack (inputStack) {
-  var y = inputStack;
-  var x = new Stack();
+function sortStackDescending (inputStack) {
+  var s1 = inputStack;
+  var s2 = new Stack();
   var swapped = true;
 
   while(swapped) {
+
     swapped = false;
-    var z = y.pop();
-    while (y.stack.length > 0) {
-      z <= y.peek() ? (
-        x.push(z),
-        z = y.pop()
-      ):(
-        x.push(y.pop()),
-        swapped = true
-      );
-      if (y.stack.length === 0) x.push(z);
+    var x = s1.pop();
+
+    while(s1.stack.length > 0) {
+      if(x <= s1.peek()) {
+        s2.push(x);
+        x = s1.pop();
+      } else {
+        s2.push(s1.pop());
+        swapped = true;
+      }
+      if (s1.stack.length === 0) s2.push(x);
     }
-    z = x.pop();
+
+    x = s2.pop();
     swapped = false;
-    while (x.stack.length > 0) {
-      z >= x.peek() ? (
-        y.push(z),
-        z = x.pop()
-      ):(
-        y.push(x.pop()),
-        swapped = true
-      );
-      if (x.stack.length === 0) y.push(z);
+
+    while(s2.stack.length > 0) {
+      if(x >= s2.peek()) {
+        s1.push(x);
+        x = s2.pop();
+      } else {
+        s1.push(s2.pop());
+        swapped = true;
+      }
+      if (s2.stack.length === 0) s1.push(x);
     }
+
   }
-  return y;
+
+  return s1;
 }
+
+function sortStackAscending (inputStack) {
+  var s1 = inputStack;
+  var s2 = new Stack();
+  var swapped = true;
+
+  while(swapped) {
+
+    swapped = false;
+    var x = s1.pop();
+
+    while(s1.stack.length > 0) {
+      if(x >= s1.peek()) {
+        s2.push(x);
+        x = s1.pop();
+      } else {
+        s2.push(s1.pop());
+        swapped = true;
+      }
+      if (s1.stack.length === 0) s2.push(x);
+    }
+
+    x = s2.pop();
+    swapped = false;
+
+    while(s2.stack.length > 0) {
+      if(x <= s2.peek()) {
+        s1.push(x);
+        x = s2.pop();
+      } else {
+        s1.push(s2.pop());
+        swapped = true;
+      }
+      if (s2.stack.length === 0) s1.push(x);
+    }
+
+  }
+
+  return s1;
+}
+
 
 var test = new Stack();
 test.push(2);
@@ -68,5 +117,6 @@ test.push(1);
 test.push(3);
 test.push(9);
 test.push(3);
-console.log(test);  // input stack
-console.log(sortStack(test)); // output stack
+console.log(test);  // -> [2, 5, 1, 3, 9, 3, 1, 3, 9, 3]
+console.log(sortStackDescending(test)); // -> [9, 9, 5, 3, 3, 3, 3, 2, 1, 1]
+console.log(sortStackAscending(test)); // -> [1, 1, 2, 3, 3, 3, 3, 5, 9, 9]
