@@ -11,6 +11,54 @@
 // Write a program to move the disks from the first tower to the last using
 // stacks.
 
-function towerHanoi () {
+// Helpers ================================================================
+function Stack() {
+  this.stack = [];
 
+  this.push = function(el) {
+    this.stack.push(el);
+  };
+
+  this.pop = function() {
+    return this.stack.pop();
+  };
+
+  this.peek = function () {
+    return this.stack[this.stack.length - 1];
+  };
+
+  this.length = function() {
+    return this.stack.length;
+  }
 }
+
+var stackA = new Stack();
+stackA.push(5);
+stackA.push(4);
+stackA.push(3);
+stackA.push(2);
+stackA.push(1);
+
+var stackB = new Stack();
+var stackC = new Stack();
+
+
+// =======================================================
+// Method #1 (Natalie)
+function hanoi(index, targetStack, subStack, idleStack) {
+  if (index === 1) {
+    var el = idleStack.pop();
+    return targetStack.push(el);
+  }
+
+  hanoi(index - 1, subStack, targetStack, idleStack);
+
+  var el = idleStack.pop();
+  targetStack.push(el);
+
+  hanoi(index - 1, targetStack, idleStack, subStack);
+}
+
+console.log('before:', stackA.stack, stackB.stack, stackC.stack);
+hanoi(stackA.length(), stackC, stackB, stackA);
+console.log('after:', stackA.stack, stackB.stack, stackC.stack);
