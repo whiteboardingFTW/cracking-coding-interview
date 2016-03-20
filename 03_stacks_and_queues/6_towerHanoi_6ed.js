@@ -63,8 +63,8 @@ console.log('before:', stackA.stack, stackB.stack, stackC.stack);
 hanoi(stackA.length(), stackC, stackB, stackA);
 console.log('after:', stackA.stack, stackB.stack, stackC.stack);
 
-
-// Method #2
+// =======================================================
+// Method #2 (Sabrina)
 var a = [5, 4, 3, 2, 1];
 var b = [];
 var c = [];
@@ -75,7 +75,7 @@ function move(n, startTower, endTower){
   endTower.push(mover);
 }
 
-function hanoi(n, startTower, endTower) {
+function hanoi2(n, startTower, endTower) {
   var midTower;
   if (startTower === a && endTower === b || startTower === b && endTower === a) {
     midTower = c;
@@ -90,9 +90,9 @@ function hanoi(n, startTower, endTower) {
     return;
   }
 
-  hanoi(n-1, startTower, midTower);
+  hanoi2(n-1, startTower, midTower);
   move(n, startTower, endTower);
-  hanoi(n-1, midTower, endTower);
+  hanoi2(n-1, midTower, endTower);
 }
 
-hanoi(5, a, c);
+hanoi2(5, a, c);
