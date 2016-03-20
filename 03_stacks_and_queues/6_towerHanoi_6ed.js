@@ -11,60 +11,37 @@
 // Write a program to move the disks from the first tower to the last using
 // stacks.
 
-// Helpers ================================================================
-function Stack() {
-  this.stack = [];
 
-  this.push = function(el) {
-    this.stack.push(el);
-  };
-
-  this.pop = function() {
-    return this.stack.pop();
-  };
-
-  this.peek = function () {
-    return this.stack[this.stack.length - 1];
-  };
-
-  this.length = function() {
-    return this.stack.length;
-  }
-}
-
-var stackA = new Stack();
-stackA.push(5);
-stackA.push(4);
-stackA.push(3);
-stackA.push(2);
-stackA.push(1);
-
-var stackB = new Stack();
-var stackC = new Stack();
-
+var stackA = [5, 4, 3, 2, 1];
+var stackB = [];
+var stackC = [];
 
 // =======================================================
 // Method #1 (Natalie)
 function hanoi(index, targetStack, subStack, idleStack) {
   if (index === 1) {
     var el = idleStack.pop();
-    return targetStack.push(el);
+    targetStack.push(el);
+    // console.log(index, stackA, stackB, stackC);
+    return;
   }
 
   hanoi(index - 1, subStack, targetStack, idleStack);
 
   var el = idleStack.pop();
   targetStack.push(el);
+  // console.log(index, stackA, stackB, stackC);
 
   hanoi(index - 1, targetStack, idleStack, subStack);
 }
 
-console.log('before:', stackA.stack, stackB.stack, stackC.stack);
-hanoi(stackA.length(), stackC, stackB, stackA);
-console.log('after:', stackA.stack, stackB.stack, stackC.stack);
+console.log('before:', stackA, stackB, stackC);
+hanoi(stackA.length, stackB, stackC, stackA);
+console.log('after:', stackA, stackB, stackC);
 
 
-// Method #2
+// =======================================================
+// Method #2 (Sabrina)
 var a = [5, 4, 3, 2, 1];
 var b = [];
 var c = [];
@@ -75,7 +52,7 @@ function move(n, startTower, endTower){
   endTower.push(mover);
 }
 
-function hanoi(n, startTower, endTower) {
+function hanoi2(n, startTower, endTower) {
   var midTower;
   if (startTower === a && endTower === b || startTower === b && endTower === a) {
     midTower = c;
@@ -90,9 +67,53 @@ function hanoi(n, startTower, endTower) {
     return;
   }
 
-  hanoi(n-1, startTower, midTower);
+  hanoi2(n-1, startTower, midTower);
   move(n, startTower, endTower);
-  hanoi(n-1, midTower, endTower);
+  hanoi2(n-1, midTower, endTower);
 }
 
-hanoi(5, a, c);
+hanoi2(5, a, c);
+
+
+// =======================================================
+// Method #3 (Natalie)
+// This solution relies on the pattern that even-indexed discs always moves to
+// the right and odd-indexed discs to the left. It stores the position in pDisc
+// and modifies it whenever a disc is moved.
+
+var sA = [5, 4, 3, 2, 1];
+var sB = [];
+var sC = [];
+
+// pDisc maps and stores the positions of each disc
+var pDisc = new Array(sA.length).fill(0);
+// pStack stores the references to the stacks for easy access
+var pStack = [sA, sB, sC];
+
+// calculates what direction it moves next based on index being even/odd
+function nextPosition(discOrder) {
+  if (discOrder % 2) {
+    pDisc[discOrder] -= 1;
+    if (pDisc[discOrder] < 0) pDisc[discOrder] = 2;
+  } else {
+    pDisc[discOrder] += 1;
+    if (pDisc[discOrder] > 2) pDisc[discOrder] = 0;
+  }
+}
+
+// actually moves the disc, and performs recursive call if and only iff
+// discOrder is not zero (i.e. not base case)
+function hanoi3(discOrder) {
+  if (discOrder) hanoi3(discOrder - 1);
+
+  var el = pStack[pDisc[discOrder]].pop();
+  nextPosition(discOrder);
+  pStack[pDisc[discOrder]].push(el);
+  // console.log(discOrder + 1, sA, sB, sC);
+
+  if (discOrder) hanoi3(discOrder - 1);
+}
+
+console.log('before', sA, sB, sC);
+hanoi3(sA.length - 1);
+console.log('after', sA, sB, sC);
