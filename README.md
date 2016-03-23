@@ -45,15 +45,14 @@ in the 6th edition, but not in the 5th edition are appended.
 |    6   | animalShelter       |   3.7  |   3.6  |     1     |
 |    7   | towerHanoi          |   3.4  |   N/A  |     3     |
 
-* 5th Ed. asks to sort in ascending order. 6th Ed. asks for descending order.
+\* 5th Ed. asks to sort in ascending order. 6th Ed. asks for descending order.
 
-### Chapter 3: Stacks and Queues
+### Chapter 4: Trees and Graphs
 
 | Number |          Name          | 5th Ed | 6th Ed | Solutions |
 |:------:|:----------------------:|:------:|:------:|:---------:|
 |    1   | createMin (aka bonsai) |   4.3  |        |     1     |
 |    2   | treeLevelList          |   4.4  |        |     1     |
-
 
 ### Miscellaneous
 
